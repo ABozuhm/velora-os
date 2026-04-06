@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Velora OS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<video autoplay muted loop id="bg">
+  <source src="assets/bg.mp4">
+</video>
+
+<!-- Desktop -->
+<div id="desktop"></div>
+
+<!-- Character -->
+<img id="character" src="assets/character.gif">
+<div id="bubble">Velora online...</div>
+
+<!-- Taskbar -->
+<div id="taskbar">
+  <button onclick="openAI()">AI</button>
+  <button onclick="openTerminal()">Terminal</button>
+</div>
+
+<script src="windows/windowManager.js"></script>
+<script src="windows/ai.js"></script>
+<script src="windows/terminal.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
