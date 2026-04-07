@@ -1,4 +1,4 @@
-const API_KEY = "PASTE_YOUR_OPENAI_KEY";
+const API_KEY = "rnd_0YtvVqxHf1ZfuHRGm6E0eVW02Gc6";
 
 function speak(text) {
   const u = new SpeechSynthesisUtterance(text);
