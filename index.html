@@ -1,32 +1,122 @@
-<!DOCTYPE html>
-<html>
+!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Velora OS</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velora Live</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="shell">
+    <aside class="sidebar left-sidebar">
+      <div class="brand">
+        <h1>BossesNBaddies</h1>
+        <p class="brand-sub">Velora Live social AI experience</p>
+      </div>
 
-<video autoplay muted loop id="bg">
-  <source src="assets/bg.mp4">
-</video>
+      <nav class="nav-menu">
+        <button class="nav-btn active" data-section="home">Home</button>
+        <button class="nav-btn" data-section="discover">Discover</button>
+        <button class="nav-btn" data-section="rooms">Rooms</button>
+        <button class="nav-btn" data-section="chat">Chat</button>
+        <button class="nav-btn" onclick="window.location.href='aiboo.html'">AI Boo</button>
+      </nav>
 
-<!-- Desktop -->
-<div id="desktop"></div>
+      <div class="side-card">
+        <h3>Platform Vision</h3>
+        <p>Voice assistant, live community, creator energy, and a polished Velora look.</p>
+      </div>
 
-<!-- Character -->
-<img id="character" src="assets/character.gif">
-<div id="bubble">Velora online...</div>
+      <div class="side-card">
+        <h3>Quick Actions</h3>
+        <button class="mini-btn" onclick="window.location.href='aiboo.html'">Open AI Boo</button>
+      </div>
+    </aside>
 
-<!-- Taskbar -->
-<div id="taskbar">
-  <button onclick="openAI()">AI</button>
-  <button onclick="openTerminal()">Terminal</button>
-</div>
+    <main class="main-content">
+      <header class="hero-banner">
+        <div class="hero-copy">
+          <p class="eyebrow">VELORA LIVE</p>
+          <h2>Build your assistant. Meet people. Launch the vibe.</h2>
+          <p>
+            A social AI shell with style, rooms, chat, discovery, and your featured AI Boo experience.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn" onclick="window.location.href='aiboo.html'">Launch AI Boo</button>
+            <button class="secondary-btn" onclick="showSection('discover')">Explore</button>
+          </div>
+        </div>
+      </header>
 
-<script src="windows/windowManager.js"></script>
-<script src="windows/ai.js"></script>
-<script src="windows/terminal.js"></script>
-<script src="app.js"></script>
+      <section id="home" class="content-section active-section">
+        <div class="grid two-up">
+          <div class="panel-card">
+            <h3>Welcome to Velora</h3>
+            <p>
+              This is your clean main landing page with sidebars, working navigation, and a direct AI Boo entry.
+            </p>
+          </div>
 
+          <div class="panel-card">
+            <h3>What works here</h3>
+            <ul>
+              <li>One AI Boo path</li>
+              <li>Live section switching</li>
+              <li>Chat area</li>
+              <li>Discover cards</li>
+              <li>Room previews</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="discover" class="content-section">
+        <h3 class="section-title">Discover</h3>
+        <div id="discoverGrid" class="grid cards-grid"></div>
+      </section>
+
+      <section id="rooms" class="content-section">
+        <h3 class="section-title">Featured Rooms</h3>
+        <div id="roomsGrid" class="grid cards-grid"></div>
+      </section>
+
+      <section id="chat" class="content-section">
+        <h3 class="section-title">Velora Chat</h3>
+
+        <div class="chat-wrap">
+          <div id="chatMessages" class="chat-messages"></div>
+
+          <div class="chat-form">
+            <input id="chatName" type="text" placeholder="Your name" />
+            <input id="chatInput" type="text" placeholder="Type a message..." />
+            <button class="primary-btn" onclick="sendChat()">Send</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar right-sidebar">
+      <div class="side-card ad-card">
+        <h3>Featured Channel</h3>
+        <p>Your YouTube can live here as your sidebar promo.</p>
+        <a class="yt-link" href="https://www.youtube.com/channel/UCAIEONU-Ie_G30ZWkn-YNMg" target="_blank" rel="noopener noreferrer">
+          Open YouTube Channel
+        </a>
+      </div>
+
+      <div class="side-card">
+        <h3>Velora Notes</h3>
+        <p>Use the AI Boo page to greet users, choose voices, and preview the assistant experience.</p>
+      </div>
+
+      <div class="side-card">
+        <h3>Status</h3>
+        <p id="statusText">Loading experience...</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
